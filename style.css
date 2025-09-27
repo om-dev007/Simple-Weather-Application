@@ -66,6 +66,8 @@ body {
 
 .main .data {
     padding: 1em;
+    display: flex;
+    justify-content: center;
 }
 
 .error {
