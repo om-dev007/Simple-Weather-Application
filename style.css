@@ -70,6 +70,7 @@ body {
 
 .main .data .get-data {
     width: 20vw;
+    display: none;
     justify-self: center;
     border: 1px solid #ccc;
     border-radius: 0.5em;

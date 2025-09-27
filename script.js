@@ -6,6 +6,8 @@ let btn = document.querySelector('button')
 
 let city = document.querySelector('.city');
 
+let getDataDIv = document.querySelector('.get-data')
+
 let temperature = document.querySelector('.temperature');
 
 let windSpeed = document.querySelector('.wind-speed');
@@ -19,7 +21,7 @@ let errorMessage = document.querySelector('.error')
 const regex = /^[a-zA-Z\s]+$/;
 
 function inputValidate(userVal) {
-    if(userVal === "" || !regex.test(userVal)) {
+    if (userVal === "" || !regex.test(userVal)) {
         errorMessage.style.display = "block"
     }
     else {
@@ -39,22 +41,21 @@ getInput()
 
 async function getWeather(cityName) {
     let data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${api_key}&units=metric`)
-    if(!data.ok) {
-        if(data.status === 404) {
+    if (!data.ok) {
+        if (data.status === 404) {
             errorMessage.textContent = `City not found`
             errorMessage.style.display = "block"
         }
     }
-    let raw = await data.json()
-    await updateWeather(raw)
+    else {
+        let raw = await data.json()
+        await updateWeather(raw)
+    }
 }
 
 async function updateWeather(current) {
     let currentWeather = await current['weather'][0]
     let currentWeatherDescription = await currentWeather.description
-    console.log(currentWeatherDescription);
-    
-    console.log(currentWeather);
     errorMessage.textContent = current['message']
     errorMessage.style.display = "block"
     let currentCityName = await current['name']
@@ -66,4 +67,5 @@ async function updateWeather(current) {
     let currentWindSpeed = await current['wind']['speed']
     weather.textContent = await currentWeatherDescription
     windSpeed.textContent = `${currentWindSpeed} m/s`
+    getDataDIv.style.display = "block"
 }
