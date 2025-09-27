@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -9,6 +9,7 @@
 }
 
 body {
+    display: flex;
     justify-self: center;
     align-content: center;
     height: 100vh;
@@ -19,6 +20,9 @@ body {
 .container {
     background-color: #fff;
     border: solid 0px #fff;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
     border-radius: 1em;
     width: 40vw;
 }
@@ -82,7 +86,7 @@ body {
     justify-content: center;
     font-weight: 600;
     font-size: larger;
-    gap: 0.4em; 
+    gap: 0.4em;
 }
 
 @media (min-width: 1300px) {
@@ -93,9 +97,11 @@ body {
     .btn button {
         width: 30vw;
     }
-     .container .main .input-sec input {
+
+    .container .main .input-sec input {
         width: 30vw;
     }
+
     .main .data .get-data {
         width: 30vw;
     }
@@ -113,9 +119,11 @@ body {
     .btn button {
         width: 30vw;
     }
-     .container .main .input-sec input {
+
+    .container .main .input-sec input {
         width: 30vw;
     }
+
     .main .data .get-data {
         width: 30vw;
     }
@@ -125,12 +133,15 @@ body {
     .container {
         width: 60vw;
     }
+
     .btn button {
         width: 30vw;
     }
-     .container .main .input-sec input {
+
+    .container .main .input-sec input {
         width: 30vw;
     }
+
     .main .data .get-data {
         width: 30vw;
     }
@@ -140,12 +151,15 @@ body {
     .container {
         width: 80vw;
     }
+
     .btn button {
         width: 40vw;
     }
-     .container .main .input-sec input {
+
+    .container .main .input-sec input {
         width: 40vw;
     }
+
     .main .data .get-data {
         width: 40vw;
     }
@@ -155,12 +169,15 @@ body {
     .container {
         width: 90vw;
     }
+
     .btn button {
         width: 60vw;
     }
-     .container .main .input-sec input {
+
+    .container .main .input-sec input {
         width: 60vw;
     }
+
     .main .data .get-data {
         width: 60vw;
     }
@@ -170,12 +187,15 @@ body {
     .container {
         width: 95vw;
     }
+
     .btn button {
         width: 70vw;
     }
-     .container .main .input-sec input {
+
+    .container .main .input-sec input {
         width: 70vw;
     }
+
     .main .data .get-data {
         width: 70vw;
     }
