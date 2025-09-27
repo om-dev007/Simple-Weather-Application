@@ -60,7 +60,7 @@ async function updateWeather(current) {
     humidity.textContent = await currentHumidity
     let currentWeather = await current['weather'][0]
     let currentWeatherDescription = await currentWeather.description
-    errorMessage.textContent = current['message']
+    errorMessage.textContent =  await current['message']
     errorMessage.style.display = "block"
     let currentCityName = await current['name']
     let currentCountryName = await current['sys']['country']
