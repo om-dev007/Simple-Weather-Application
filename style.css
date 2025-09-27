@@ -33,18 +33,30 @@ body {
     width: 20vw;
 }
 
+.container .main .input-sec input:focus {
+    border: solid 2px rgb(0, 26, 255);
+    outline: none;
+}
+
 .container .main .btn {
     padding: 1em;
 }
 
 .btn button {
-    background-color: rgb(0, 162, 255);
-    border: solid 1px rgb(0, 162, 255);
+    background-color: rgb(0, 132, 255);
+    border: solid 1px rgb(0, 132, 255);
     border-radius: 0.3em;
     font-size: large;
     width: 20vw;
     cursor: pointer;
     color: #ecebeb;
+    transition: all 0.3s ease-in;
+}
+
+.btn button:hover {
+    background-color: rgba(0, 162, 255, 0.863);
+    border-color: rgba(0, 162, 255, 0.863);
+    color: #fcf9f9;
 }
 
 .main .data {
@@ -71,6 +83,22 @@ body {
     gap: 0.4em; 
 }
 
+@media (min-width: 1300px) {
+    .container {
+        width: 50vw;
+    }
+
+    .btn button {
+        width: 30vw;
+    }
+     .container .main .input-sec input {
+        width: 30vw;
+    }
+    .main .data .get-data {
+        width: 30vw;
+    }
+}
+
 @media (max-width: 900px) and (min-width: 750px) {
     body {
         font-size: 1em;
@@ -80,7 +108,7 @@ body {
         width: 50vw;
     }
 
-    /* .btn button {
+    .btn button {
         width: 30vw;
     }
      .container .main .input-sec input {
@@ -88,12 +116,12 @@ body {
     }
     .main .data .get-data {
         width: 30vw;
-    } */
+    }
 }
 
 @media (max-width: 749px) and (min-width: 500px) {
     .container {
-        width: 70vw;
+        width: 60vw;
     }
     .btn button {
         width: 30vw;
@@ -133,5 +161,20 @@ body {
     }
     .main .data .get-data {
         width: 60vw;
+    }
+}
+
+@media (max-width: 299px) {
+    .container {
+        width: 95vw;
+    }
+    .btn button {
+        width: 70vw;
+    }
+     .container .main .input-sec input {
+        width: 70vw;
+    }
+    .main .data .get-data {
+        width: 70vw;
     }
 }

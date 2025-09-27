@@ -15,9 +15,11 @@ let weather = document.querySelector('.weather');
 let country = document.querySelector('.country')
 
 let errorMessage = document.querySelector('.error')
- 
+
+const regex = /^[a-zA-Z\s]+$/;
+
 function inputValidate(userVal) {
-    if(userVal === "" || !isNaN(userVal)) {
+    if(userVal === "" || !regex.test(userVal)) {
         errorMessage.style.display = "block"
     }
     else {
@@ -37,11 +39,22 @@ getInput()
 
 async function getWeather(cityName) {
     let data = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${api_key}&units=metric`)
+    if(!data.ok) {
+        if(data.status === 404) {
+            errorMessage.textContent = `City not found`
+            errorMessage.style.display = "block"
+        }
+    }
     let raw = await data.json()
     await updateWeather(raw)
 }
 
 async function updateWeather(current) {
+    let currentWeather = await current['weather'][0]
+    let currentWeatherDescription = await currentWeather.description
+    console.log(currentWeatherDescription);
+    
+    console.log(currentWeather);
     errorMessage.textContent = current['message']
     errorMessage.style.display = "block"
     let currentCityName = await current['name']
@@ -49,7 +62,8 @@ async function updateWeather(current) {
     let currentTemp = await current['main']['temp']
     city.textContent = `${currentCityName},`;
     country.textContent = await currentCountryName
-    temperature.textContent = await currentTemp
+    temperature.innerHTML = `${currentTemp} <sup>o</sup>C`
     let currentWindSpeed = await current['wind']['speed']
-    windSpeed.textContent = await currentWindSpeed
+    weather.textContent = await currentWeatherDescription
+    windSpeed.textContent = `${currentWindSpeed} m/s`
 }
