@@ -58,7 +58,7 @@ cd Simple-Weather-Application
 
 ## 📸 Screenshots
 
-![logo](weather.png)
+![logo](./image.png)
 
 ---
 
