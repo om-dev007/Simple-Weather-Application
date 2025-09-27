@@ -91,7 +91,7 @@ body {
 
 @media (min-width: 1300px) {
     .container {
-        width: 50vw;
+        width: 40vw;
     }
 
     .btn button {
@@ -104,6 +104,24 @@ body {
 
     .main .data .get-data {
         width: 30vw;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1299px) {
+    .container {
+        width: 30vw !important;
+    }
+
+    .btn button {
+        width: 20vw;
+    }
+
+    .container .main .input-sec input {
+        width: 20vw;
+    }
+
+    .main .data .get-data {
+        width: 20vw;
     }
 }
 
