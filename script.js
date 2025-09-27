@@ -18,6 +18,8 @@ let country = document.querySelector('.country')
 
 let errorMessage = document.querySelector('.error')
 
+let humidity = document.querySelector('.humidity')
+
 const regex = /^[a-zA-Z\s]+$/;
 
 function inputValidate(userVal) {
@@ -54,6 +56,8 @@ async function getWeather(cityName) {
 }
 
 async function updateWeather(current) {
+    let currentHumidity = await current['main']['humidity']
+    humidity.textContent = await currentHumidity
     let currentWeather = await current['weather'][0]
     let currentWeatherDescription = await currentWeather.description
     errorMessage.textContent = current['message']
