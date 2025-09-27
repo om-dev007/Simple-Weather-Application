@@ -58,7 +58,7 @@ cd Simple-Weather-Application
 
 ## 📸 Screenshots
 
-_Add screenshots of your app here (for better presentation on GitHub)._
+![logo](weather.png)
 
 ---
 
