@@ -30,6 +30,7 @@ body {
     padding: 0.5em;
     border: solid #ccc 1px;
     border-radius: 0.4em;
+    width: 20vw;
 }
 
 .container .main .btn {
@@ -41,7 +42,7 @@ body {
     border: solid 1px rgb(0, 162, 255);
     border-radius: 0.3em;
     font-size: large;
-    width: 15vw;
+    width: 20vw;
     cursor: pointer;
     color: #ecebeb;
 }
@@ -56,7 +57,7 @@ body {
 }
 
 .main .data .get-data {
-    width: 50%;
+    width: 20vw;
     justify-self: center;
     border: 1px solid #ccc;
     border-radius: 0.5em;
@@ -68,4 +69,69 @@ body {
     font-weight: 600;
     font-size: larger;
     gap: 0.4em; 
+}
+
+@media (max-width: 900px) and (min-width: 750px) {
+    body {
+        font-size: 1em;
+    }
+
+    .container {
+        width: 50vw;
+    }
+
+    /* .btn button {
+        width: 30vw;
+    }
+     .container .main .input-sec input {
+        width: 30vw;
+    }
+    .main .data .get-data {
+        width: 30vw;
+    } */
+}
+
+@media (max-width: 749px) and (min-width: 500px) {
+    .container {
+        width: 70vw;
+    }
+    .btn button {
+        width: 30vw;
+    }
+     .container .main .input-sec input {
+        width: 30vw;
+    }
+    .main .data .get-data {
+        width: 30vw;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 499px) {
+    .container {
+        width: 80vw;
+    }
+    .btn button {
+        width: 40vw;
+    }
+     .container .main .input-sec input {
+        width: 40vw;
+    }
+    .main .data .get-data {
+        width: 40vw;
+    }
+}
+
+@media (max-width: 424px) and (min-width: 300px) {
+    .container {
+        width: 90vw;
+    }
+    .btn button {
+        width: 60vw;
+    }
+     .container .main .input-sec input {
+        width: 60vw;
+    }
+    .main .data .get-data {
+        width: 60vw;
+    }
 }
